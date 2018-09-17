@@ -1,3 +1,18 @@
 page-home {
 
 }
+
+.item ion-thumbnail {
+  min-width: 5rem;
+  min-height: 5rem;
+  img {
+      max-width: 4rem;
+      min-width: 4rem;
+      max-height: 4rem;
+      min-height: 4rem;
+  }
+}
+
+.item-inactive {
+  background: color($colors, light);
+}
