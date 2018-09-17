@@ -7,7 +7,7 @@
 </ion-header>
 
 
-<ion-content color="light">
+<ion-content>
 
   <ion-list >
       <ion-card *ngFor="let item of atividades">
@@ -24,26 +24,26 @@
           <ion-col >
             <button ion-button icon-left clear small (click)="editarAtividade(item);" color="primary">
               <ion-icon name="create" ></ion-icon>
-              <div>Editar</div>
+              <b>Editar</b>
             </button>
           </ion-col>
           <ion-col>
             <button ion-button icon-left clear small (click)="removerAtividade(item);" color="danger">
               <ion-icon name="trash"></ion-icon>
-              <div>Excluir</div>
+              <b>Excluir</b>
             </button>
           </ion-col>
           <ion-col>
             <button ion-button icon-left clear small (click)="atualizarStatus(item)"  color="dark">
               <ion-icon name="{{item.atividade.status ? 'checkmark' : 'warning'}}"
                 color="{{item.atividade.status ? 'secondary' : 'warn'}}"></ion-icon>
-              <div>{{item.atividade.status ? 'Realizada' : 'A fazer'}}</div>
+              <b>{{item.atividade.status ? 'Realizada' : 'A fazer'}}</b>
             </button>
           </ion-col>
         </ion-row>
         <ion-row text-center>
-          <ion-col>
-              <ion-icon name="key" ></ion-icon> {{ item.key }}
+          <ion-col  color="primary">
+            <ion-icon name="key" ></ion-icon> {{ item.key }}
           </ion-col>
         </ion-row>
       </ion-card>
