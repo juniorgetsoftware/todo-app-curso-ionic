@@ -13,7 +13,7 @@
       <ion-card *ngFor="let item of atividades" [ngClass]="{'status-true': item.atividade.status}">
 
         <ion-card-header>
-          <h1><b>{{ item.atividade.titulo }} / <ion-icon name="key" ></ion-icon> {{ item.key }} </b></h1>
+          <h1><b>{{ item.atividade.titulo }} </b></h1>
         </ion-card-header>
 
         <ion-card-content>
@@ -39,6 +39,11 @@
                 color="{{item.atividade.status ? 'dark' : 'warn'}}"></ion-icon>
               <div>{{item.atividade.status ? 'Realizada' : 'A fazer'}}</div>
             </button>
+          </ion-col>
+        </ion-row>
+        <ion-row text-center>
+          <ion-col>
+              <ion-icon name="key" ></ion-icon> {{ item.key }}
           </ion-col>
         </ion-row>
       </ion-card>

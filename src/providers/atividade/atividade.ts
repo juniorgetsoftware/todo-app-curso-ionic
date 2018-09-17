@@ -10,7 +10,7 @@ export class AtividadeProvider {
   }
 
   public insert(atividade: Atividade) {
-    let key = new Date().getMilliseconds().toString();
+    let key = new Date().getTime().toString();
     return this.save(key, atividade);
   }
 
