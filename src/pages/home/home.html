@@ -10,10 +10,10 @@
 <ion-content color="light">
 
   <ion-list >
-      <ion-card *ngFor="let item of atividades" [ngClass]="{'status-true': item.atividade.status}">
+      <ion-card *ngFor="let item of atividades">
 
-        <ion-card-header>
-          <h1><b>{{ item.atividade.titulo }} </b></h1>
+        <ion-card-header (click)="editarAtividade(item);" >
+          <h1 [ngClass]="{'status-true': item.atividade.status}"><b>{{ item.atividade.titulo }} </b></h1>
         </ion-card-header>
 
         <ion-card-content>
@@ -22,21 +22,21 @@
 
         <ion-row text-center>
           <ion-col >
-            <button ion-button icon-left clear small (click)="editarAtividade(item);" color="dark">
+            <button ion-button icon-left clear small (click)="editarAtividade(item);" color="primary">
               <ion-icon name="create" ></ion-icon>
               <div>Editar</div>
             </button>
           </ion-col>
           <ion-col>
-            <button ion-button icon-left clear small (click)="removerAtividade(item);" color="dark">
-              <ion-icon name="trash" big></ion-icon>
+            <button ion-button icon-left clear small (click)="removerAtividade(item);" color="danger">
+              <ion-icon name="trash"></ion-icon>
               <div>Excluir</div>
             </button>
           </ion-col>
           <ion-col>
             <button ion-button icon-left clear small (click)="atualizarStatus(item)"  color="dark">
               <ion-icon name="{{item.atividade.status ? 'checkmark' : 'warning'}}"
-                color="{{item.atividade.status ? 'dark' : 'warn'}}"></ion-icon>
+                color="{{item.atividade.status ? 'secondary' : 'warn'}}"></ion-icon>
               <div>{{item.atividade.status ? 'Realizada' : 'A fazer'}}</div>
             </button>
           </ion-col>
