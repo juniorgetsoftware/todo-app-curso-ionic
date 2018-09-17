@@ -7,15 +7,41 @@
 </ion-header>
 
 
-<ion-content padding>
-    <ion-list>
-        <ion-item *ngFor="let item of atividades" (click)="editarAtividade(item)">
-          <ion-thumbnail item-start>
-            <img src="assets/imgs/educacao.png">
-          </ion-thumbnail>
-          <h2>{{item.atividade.titulo}}</h2>
-          <p>{{item.atividade.descricao}}</p>
-        </ion-item>
+<ion-content color="light">
+
+  <ion-list >
+      <ion-card *ngFor="let item of atividades" [ngClass]="{'status-true': item.atividade.status}">
+
+        <ion-card-header>
+          <h1><b>{{ item.atividade.titulo }} / <ion-icon name="key" ></ion-icon> {{ item.key }} </b></h1>
+        </ion-card-header>
+
+        <ion-card-content>
+          <p><i>{{ item.atividade.descricao }}</i></p>
+        </ion-card-content>
+
+        <ion-row text-center>
+          <ion-col >
+            <button ion-button icon-left clear small (click)="editarAtividade(item);" color="dark">
+              <ion-icon name="create" ></ion-icon>
+              <div>Editar</div>
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button icon-left clear small (click)="removerAtividade(item);" color="dark">
+              <ion-icon name="trash" big></ion-icon>
+              <div>Excluir</div>
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button icon-left clear small (click)="atualizarStatus(item)"  color="dark">
+              <ion-icon name="{{item.atividade.status ? 'checkmark' : 'warning'}}"
+                color="{{item.atividade.status ? 'dark' : 'warn'}}"></ion-icon>
+              <div>{{item.atividade.status ? 'Realizada' : 'A fazer'}}</div>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-card>
     </ion-list>
 
   <ion-fab bottom right >

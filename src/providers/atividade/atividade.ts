@@ -2,12 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
 
-/*
-  Generated class for the AtividadeProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class AtividadeProvider {
 
@@ -36,7 +30,7 @@ export class AtividadeProvider {
 
     let atividades: AtividadeList[] = [];
 
-    return this.storage.forEach((value: Atividade, key: string, iterationNumber: Number) => {
+    return this.storage.forEach((value: Atividade, key: string) => {
       let atividade = new AtividadeList();
       atividade.key = key;
       atividade.atividade = value;

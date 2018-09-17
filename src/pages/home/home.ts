@@ -35,7 +35,15 @@ export class HomePage {
         // Removendo do array de items
         var index = this.atividades.indexOf(atividade);
         this.atividades.splice(index, 1);
-        this.toastCtrl.create({ message: 'Atividade removida.', duration: 3000, position: 'botton' }).present();
+        this.toastCtrl.create({ message: 'Atividade removida.', duration: 3000, position: 'bottom' }).present();
+      })
+  }
+
+  atualizarStatus(item: AtividadeList) {
+    item.atividade.status = !item.atividade.status;
+    this.atividadeProvider.update(item.key, item.atividade)
+      .then(() => {
+           this.toastCtrl.create({ message: 'O status da atividade foi atualizada', duration: 3000, position: 'bottom' }).present();
       })
   }
 

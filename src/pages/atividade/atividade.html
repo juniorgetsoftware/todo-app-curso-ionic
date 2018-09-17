@@ -25,6 +25,11 @@
           <ion-textarea rows="5" [(ngModel)]="atividade.descricao"></ion-textarea>
         </ion-item>
 
+        <ion-item>
+            <ion-label>A atividade foi realizada?</ion-label>
+            <ion-checkbox color="light" [(ngModel)]="atividade.status" ></ion-checkbox>
+          </ion-item>
+
       </ion-list>
 
       <ion-grid>

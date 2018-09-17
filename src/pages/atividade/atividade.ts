@@ -2,13 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
 import { AtividadeProvider, Atividade } from './../../providers/atividade/atividade';
 
-/**
- * Generated class for the AtividadePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-atividade',
@@ -31,11 +24,11 @@ export class AtividadePage {
   cadastrar() {
     this.salvarAtividade()
       .then(() => {
-        this.toastCtrl.create({ message: 'Atividade cadastrada.', duration: 3000, position: 'botton' }).present();
+        this.toastCtrl.create({ message: 'Atividade cadastrada.', duration: 3000, position: 'bottom' }).present();
         this.navCtrl.pop();
       })
       .catch(() => {
-        this.toastCtrl.create({ message: 'Erro ao cadastrar a atividade.', duration: 3000, position: 'botton' }).present();
+        this.toastCtrl.create({ message: 'Erro ao cadastrar a atividade.', duration: 3000, position: 'bottom' }).present();
       });
   }
 
